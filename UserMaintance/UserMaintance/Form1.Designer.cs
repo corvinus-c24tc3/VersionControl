@@ -30,10 +30,8 @@ namespace UserMaintance
         private void InitializeComponent()
         {
             this.listUsers = new System.Windows.Forms.ListBox();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblFullName = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -45,23 +43,14 @@ namespace UserMaintance
             this.listUsers.Size = new System.Drawing.Size(213, 420);
             this.listUsers.TabIndex = 0;
             // 
-            // lblLastName
+            // lblFullName
             // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(242, 47);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(35, 13);
-            this.lblLastName.TabIndex = 1;
-            this.lblLastName.Text = "label1";
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(242, 79);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(35, 13);
-            this.lblFirstName.TabIndex = 2;
-            this.lblFirstName.Text = "label2";
+            this.lblFullName.AutoSize = true;
+            this.lblFullName.Location = new System.Drawing.Point(242, 47);
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(35, 13);
+            this.lblFullName.TabIndex = 1;
+            this.lblFullName.Text = "label1";
             // 
             // textBox1
             // 
@@ -69,13 +58,6 @@ namespace UserMaintance
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(118, 20);
             this.textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(293, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 20);
-            this.textBox2.TabIndex = 4;
             // 
             // btnAdd
             // 
@@ -93,10 +75,8 @@ namespace UserMaintance
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.lblLastName);
+            this.Controls.Add(this.lblFullName);
             this.Controls.Add(this.listUsers);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -109,10 +89,8 @@ namespace UserMaintance
         #endregion
 
         private System.Windows.Forms.ListBox listUsers;
-        private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblFullName;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnAdd;
     }
 }
