@@ -77,5 +77,14 @@ namespace UserMaintance {
                 return ResourceManager.GetString("FullName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fájlba Írás.
+        /// </summary>
+        internal static string WriteToFIle {
+            get {
+                return ResourceManager.GetString("WriteToFIle", resourceCulture);
+            }
+        }
     }
 }
