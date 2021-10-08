@@ -64,5 +64,6 @@ namespace UserMaintance
             var u = users[listUsers.SelectedIndex];
             users.Remove(u);
         }
+
     }
 }
