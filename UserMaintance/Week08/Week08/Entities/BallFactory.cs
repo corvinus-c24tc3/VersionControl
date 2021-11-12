@@ -9,9 +9,12 @@ namespace Week08.Entities
    public class BallFactory
     {
 
-        public Ball CreateNew()
+        public class BallFactory : IToyFactory
         {
-            return new Ball();
+            public Toy CreateNew()
+            {
+                return new Ball();
+            }
         }
     }
 }
