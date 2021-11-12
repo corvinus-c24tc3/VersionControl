@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Week08.Entities
 {
@@ -20,6 +21,11 @@ namespace Week08.Entities
         private void Ball_Paint(object sender, PaintEventArgs e)
         {
             DrawImage(e.Graphics);
+        }
+
+        private void DrawImage(Graphics graphics)
+        {
+            throw new NotImplementedException();
         }
 
         protected void DrawImage(Graphics g)
