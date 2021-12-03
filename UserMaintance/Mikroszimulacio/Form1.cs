@@ -20,6 +20,9 @@ namespace Mikroszimulacio
         public Form1()
         {
             InitializeComponent();
+
+            BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
+            DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -46,6 +49,27 @@ namespace Mikroszimulacio
             }
 
             return population;
+        }
+
+        public List<DeathProbability> GetDeathProbabilities(string csvpath)
+        {
+            List<DeathProbability> halalEsely = new List<DeathProbability>();
+
+            using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');
+                    halalEsely.Add(new DeathProbability()
+                    {
+                        Gender = (Gender)Enum.Parse(typeof(Gender), line[0]),
+                        Kor = int.Parse(line[1]),
+                        P = int.Parse(line[2])
+                    });
+                }
+            }
+
+            return halalEsely;
         }
 
     }
