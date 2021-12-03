@@ -134,7 +134,15 @@ namespace Mikroszimulacio
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var ofd = new OpenFileDialog();
+            ofd.FileName = textBox1.Text;
 
+            if (ofd.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            textBox1.Text = ofd.FileName;
         }
 
         private void button2_Click(object sender, EventArgs e)
