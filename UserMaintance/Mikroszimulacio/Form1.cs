@@ -54,6 +54,27 @@ namespace Mikroszimulacio
             return population;
         }
 
+        public List<BirthProbability> GetBirthProbabilities(string csvpath)
+        {
+            List<BirthProbability> szulEsely = new List<BirthProbability>();
+
+            using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');
+                    szulEsely.Add(new BirthProbability()
+                    {
+                        Kor = int.Parse(line[0]),
+                        NbrOfChildren = int.Parse(line[1]),
+                        P = int.Parse(line[2])
+                    });
+                }
+            }
+
+            return szulEsely;
+        }
+
         public List<DeathProbability> GetDeathProbabilities(string csvpath)
         {
             List<DeathProbability> halalEsely = new List<DeathProbability>();
@@ -111,5 +132,14 @@ namespace Mikroszimulacio
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
