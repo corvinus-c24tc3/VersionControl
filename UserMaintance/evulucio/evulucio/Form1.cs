@@ -15,6 +15,9 @@ namespace evulucio
     {
         GameController gc = new GameController();
         GameArea ga;
+
+        Brain winnerBrain = null;
+
         int populationSize = 100;
         int nbrOfSteps = 10;
         int nbrOfStepsIncrement = 10;
@@ -81,7 +84,11 @@ namespace evulucio
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            gc.ResetCurrentLevel();
+            gc.AddPlayer(winnerBrain.Clone());
+            gc.AddPlayer();
+            ga.Focus();
+            gc.Start(true);
         }
     }
 }
