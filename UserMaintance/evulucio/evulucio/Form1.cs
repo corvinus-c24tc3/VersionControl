@@ -25,14 +25,17 @@ namespace evulucio
         public Form1()
         {
             InitializeComponent();
+
             ga = gc.ActivateDisplay();
             this.Controls.Add(ga);
-            gc.GameOver += Gc_GameOver;
 
             for (int i = 0; i < populationSize; i++)
             {
                 gc.AddPlayer(nbrOfSteps);
-            }
+
+            };
+            button1.Visible = false;
+            gc.GameOver += Gc_GameOver;
             gc.Start();
         }
 
