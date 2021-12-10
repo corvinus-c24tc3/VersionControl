@@ -24,9 +24,29 @@ namespace evulucio
             InitializeComponent();
             ga = gc.ActivateDisplay();
             this.Controls.Add(ga);
+            gc.GameOver += Gc_GameOver;
+
+            for (int i = 0; i < populationSize; i++)
+            {
+                gc.AddPlayer(nbrOfSteps);
+            }
+            gc.Start();
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Gc_GameOver(object sender)
+        {
+            generation++;
+            label1.Text = string.Format(
+                "{0}. generáció",
+                generation);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
