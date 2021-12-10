@@ -7,14 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WorldsHardestGame;
 
 namespace evulucio
 {
     public partial class Form1 : Form
     {
+        GameController gc = new GameController();
+        GameArea ga;
         public Form1()
         {
             InitializeComponent();
+            ga = gc.ActivateDisplay();
+            this.Controls.Add(ga);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
