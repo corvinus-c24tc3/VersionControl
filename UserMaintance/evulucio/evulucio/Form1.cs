@@ -64,6 +64,19 @@ namespace evulucio
                 else
                     gc.AddPlayer(b.Mutate());
             }
+
+            var winners = from p in topPerformers
+                          where p.IsWinner
+                          select p;
+            if (winners.Count() > 0)
+            {
+                winnerBrain = winners.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                button1.Visible = true;
+                return;
+            }
+
+            gc.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
